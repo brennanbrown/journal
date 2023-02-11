@@ -12,23 +12,26 @@ pygmentsUseClasses: false
 minify: true
 
 permalinks:
-  writing: /:year/:month/:day/:slug/
-  projects: /:year/:month/:day/:slug/
+  writing: /:slug/
+  projects: /:slug/
 
 menu:
   main:
-    - name: "Home"
+    - name: "🏠 Home"
       url: "/"
       weight: 1
-    - name: "About"
+    - name: "❓ About"
       url: "/about/"
       weight: 2
-    - name: "Writing"
+    - name: "✏️ Writing"
       url: "/writing/"
-      weight: 2
+      weight: 3
     - identifier: projects
-      name: Projects
+      name: "✨ Projects"
       url: /projects/
+      weight: 4
+    - name: "🏷️ Tags"
+      url: "/tags/"
       weight: 5
 
 params:
@@ -36,15 +39,15 @@ params:
   FooterText: "© Jam Theme"
 
 frontmatter:
-  author: Ronalds Vilcins
-  github: 'https://github.com/ronv'
-  facebook: 'https://facebook.com/####'
+  author: B. Kenneth Brown
+  github: 'https://github.com/brennanbrown'
+  facebook: 'https://facebook.com/brennankbrown'
   og_image: /images/####
   sitename: ######
   twitter: '######'
 
 sitemap:
-  changefreq: monthly
+  changefreq: daily
   filename: sitemap.xml
   priority: 0.5
 

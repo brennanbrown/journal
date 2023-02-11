@@ -7,7 +7,7 @@ html, body {
   height: 100%;
 }
 html {
-  font-size: 100%;
+  font-size: 120%;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   box-sizing: border-box;
@@ -34,20 +34,17 @@ h4 { font-size: 1.00em; }
 h5 { font-size: 0.85em; }
 h6 { font-size: 0.75em; }
 
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-  text-decoration: none;
-}
-
 h1, h2, h3, h4, h5, h6 {
   margin-top: 1.5em;
 }
 
 a {
-  color: #333;
+  color: #02046f;
 }
 
 a:hover {
   text-decoration: underline;
+  color: #666;
 }
 blockquote {
   border-left: 0.25em solid #333;
@@ -147,7 +144,6 @@ nav li:last-child {
 }
 
 nav a {
-  text-decoration: none;
   color: inherit;
 }
 
@@ -170,4 +166,21 @@ nav a:hover {
 
 .content p a {
   text-decoration: underline;
+}
+
+#content {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#breadcrumbs {
+  color: #666;
+  margin-top: -10px;
+  margin-bottom: 5px;
+  text-transform: capitalize;
+}
+
+#breadcrumbs a {
+  color: #666;
+  font-size: 0.9em;
+  margin-right: 5px;
 }

@@ -1,12 +1,32 @@
-
 {{ define "main" }}
     <h1>{{ .Title }}</h1>
+    {{ if eq .Type "writing" }}
+      <time>{{ .Date.Format "Monday, January 1, 2006" }}</time> •
+    {{ end }}
   
-  {{ .Content }}
+    {{ if .Params.tags }}
+      <b>🏷️ Tags:</b>
+      {{ range .Params.tags }}
+        <a href="/tags/{{ . | urlize }}">{{ . }}</a> •
+      {{ end }}
+      <br/>
+    {{ end }}
+  
+    {{ if .Params.categories }}
+      <b>Categories:</b>
+      {{ range .Params.categories }}
+        <a href="/categories/{{ . | urlize }}">{{ . }}</a>
+      {{ end }}
+    {{ end }}
 
-  {{ if eq .Type "writing" }}
-  <br>
-    Posted on <time>{{ .Date.Format "2006/01/02" }}</time>
+    ⌛ Reading time: {{ .ReadingTime }} minute{{ if (ne .ReadingTime 1) }}s{{ end }}
+    
+    <div id="content">
+      {{ .Content }}
+    </div>
+
+  {{ if .Params.author }}
+  {{ partial "author.html" . }}
   {{ end }}
 
 {{ end }}
