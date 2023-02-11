@@ -2,15 +2,41 @@
 
   {{ .Content }}
   <h1>{{ .Title }}</h1>
-  {{- $cs := .CurrentSection }}
-  {{- with $cs }}
-    {{- range (where .Site.RegularPages "Section" .Section) }}
-      {{- if .IsDescendant $cs }}
-  <article class="list">
-      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-      <time>{{ .Date.Format "02/01/2006" }}</time>
-  </article>
+  {{ if gt ( len ( where .Pages "Section" "writing" )) 0 }}
+    {{- $cs := .CurrentSection }}
+    {{- with $cs }}
+      {{- range .Site.RegularPages.GroupByDate "January 2006" }}
+        {{- $month := .Key }}
+        <h2>{{ $month }}</h2>
+        {{- range .Pages }}
+          {{- if .IsDescendant $cs }}
+        <article class="list">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <time>{{ .Date.Format "02/01/2006" }}</time>
+        </article>
+        <div class="tags">
+          {{- range .Params.tags }}
+            #{{ . }}
+          {{- end }}
+        </div>
+          {{- end }}
+        {{- end }}
       {{- end }}
     {{- end }}
-  {{- end }}
+  {{ end }}
+
+  {{ if gt ( len ( where .Pages "Section" "projects" )) 0 }}
+    {{- $cs := .CurrentSection }}
+    {{- with $cs }}
+      {{- range (where .Site.RegularPages "Section" .Section) }}
+        {{- if .IsDescendant $cs }}
+    <article class="list">
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <time>{{ .Date.Format "02/01/2006" }}</time>
+    </article>
+        {{- end }}
+      {{- end }}
+    {{- end }}
+  {{ end }}
+  
 {{ end }}

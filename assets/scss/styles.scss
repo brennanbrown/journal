@@ -27,8 +27,8 @@ body {
   margin: 0;
 }
 
-h1 { font-size: 1.50em; }
-h2 { font-size: 1.40em; }
+h1 { font-size: 1.60em; }
+h2 { font-size: 1.30em; }
 h3 { font-size: 1.20em; }
 h4 { font-size: 1.00em; }
 h5 { font-size: 0.85em; }
@@ -95,7 +95,7 @@ main {
 footer {
   border-top: 1px solid #333;
   background-color: #fff;
-  padding: 2rem;
+  padding: 1rem;
   max-width: 70ch;
   margin: 0 auto;
   color: #333;
@@ -166,6 +166,13 @@ nav a:hover {
 
 .content p a {
   text-decoration: underline;
+}
+
+.tags {
+  font-size: 90%;
+  margin-right: 1em;
+  margin: 0 auto;
+  width: 90%;
 }
 
 #content {

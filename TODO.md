@@ -5,7 +5,7 @@
 - Add author section to end of posts: code is there, not copy
 - Add emojis!
 
-Writing:
+## Writing
 
 - Footer
 - Homepage

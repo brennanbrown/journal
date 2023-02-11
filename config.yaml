@@ -12,8 +12,8 @@ pygmentsUseClasses: false
 minify: true
 
 permalinks:
-  writing: /:slug/
-  projects: /:slug/
+  writing: /writing/:slug/
+  projects: /projects/:slug/
 
 menu:
   main:

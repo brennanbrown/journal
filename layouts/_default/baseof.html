@@ -7,7 +7,6 @@
   <title>{{ if eq .IsHome true }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
   <meta name="description" content="{{ if ne .Description "" }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 {{ template "_internal/opengraph.html" . }}
-  {{ template "_internal/google_news.html" . }}
   {{ template "_internal/schema.html" . }}
   {{ template "_internal/twitter_cards.html" . }}
   <link rel="canonical" href="{{ .Permalink | absURL }}">
@@ -92,7 +91,7 @@
 				{{- if .Site.Menus.main }}				
 				<ul>
 				{{- range .Site.Menus.main.ByWeight }}
-					<li><a href="{{ .URL }}">{{ .Name }}</a></li>
+					<li><a href="{{ .URL }}">{{ .Name }}</a> /</li>
 				{{- end }}
 				</ul>
 				{{- end }}
@@ -103,10 +102,6 @@
 			{{- block "main" . }}{{ end }}
 		</div>
 	</main>
-    {{- if .Site.Params.FooterText }}
-	<footer>
-		<p>{{ .Site.Params.FooterText }}</p>
-	</footer>
-{{- end }}
+    {{ partial "footer.html" . }}
 </body>
 </html>
