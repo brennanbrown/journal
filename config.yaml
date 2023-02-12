@@ -36,7 +36,6 @@ menu:
 
 params:
   description: "Jam is a minimal personal blog and portfolio theme powered by Hugo."
-  FooterText: "© Jam Theme"
 
 frontmatter:
   author: B. Kenneth Brown
@@ -44,7 +43,7 @@ frontmatter:
   facebook: 'https://facebook.com/brennankbrown'
   og_image: /images/####
   sitename: ######
-  twitter: '######'
+  twitter: 'https://twitter.com/bkennethbrown'
 
 sitemap:
   changefreq: daily
