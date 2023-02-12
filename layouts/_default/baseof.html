@@ -86,12 +86,13 @@
 <body>
 	<main>
 		<header>
-			<a class="title" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+            <img style="width:5%"src="https://i.ibb.co/jrvKBC0/logo.png" alt="Logo"/>
+			<a class="title" href="/">{{ .Site.Title }}</a>
 			<nav>
 				{{- if .Site.Menus.main }}				
 				<ul>
 				{{- range .Site.Menus.main.ByWeight }}
-					<li><a href="{{ .URL }}">{{ .Name }}</a> /</li>
+					<li><a href="{{ .URL }}">{{ .Name }}</a> •</li>
 				{{- end }}
 				</ul>
 				{{- end }}

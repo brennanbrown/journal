@@ -3,7 +3,7 @@
   {{ .Content }}
   
   {{ if gt ( len ( where .Pages "Section" "writing" )) 0 }}
-    <h2>Latest Articles</h2>
+    <h2>Latest Writings</h2>
     {{ range first 5 ( where .Site.RegularPages "Section" "writing" ) }}
       <article class="list">
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>

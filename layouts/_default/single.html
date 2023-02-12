@@ -1,32 +1,38 @@
 {{ define "main" }}
     <h1>{{ .Title }}</h1>
     {{ if eq .Type "writing" }}
-      <time>{{ .Date.Format "Monday, January 1, 2006" }}</time> •
-    {{ end }}
-  
-    {{ if .Params.tags }}
-      <b>🏷️ Tags:</b>
-      {{ range .Params.tags }}
-        <a href="/tags/{{ . | urlize }}">{{ . }}</a> •
+    <div class="post-data">
+        Written: <time>{{ .Date.Format "Monday, January 1, 2006" }}</time> •
+    
+      {{ if .Params.tags }}
+        <b>🏷️ Tags:</b>
+        {{ range .Params.tags }}
+          <a href="/tags/{{ . | urlize }}">{{ . }}</a> •
+        {{ end }}
+        <br/>
       {{ end }}
-      <br/>
-    {{ end }}
-  
-    {{ if .Params.categories }}
-      <b>Categories:</b>
-      {{ range .Params.categories }}
-        <a href="/categories/{{ . | urlize }}">{{ . }}</a>
+    
+      {{ if .Params.categories }}
+        <b>Categories:</b>
+        {{ range .Params.categories }}
+          <a href="/categories/{{ . | urlize }}">{{ . }}</a>
+        {{ end }}
       {{ end }}
-    {{ end }}
 
-    ⌛ Reading time: {{ .ReadingTime }} minute{{ if (ne .ReadingTime 1) }}s{{ end }}
+      ⌛ Reading time: {{ .ReadingTime }} minute{{ if (ne .ReadingTime 1) }}s{{ end }}
+    </div>
+    {{ end }}
     
     <div id="content">
       {{ .Content }}
     </div>
-
-  {{ if .Params.author }}
-  {{ partial "author.html" . }}
+    
+  {{ if eq .Type "writing" }}
+    {{ if .Params.author }}
+      {{ partial "author.html" . }}
+    {{ end }}
   {{ end }}
+
+  {{ partial "share-buttons.html" . }}
 
 {{ end }}
