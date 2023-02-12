@@ -119,12 +119,18 @@ footer {
 }
 time {
   font-variant-numeric: tabular-nums;
+  font-weight: bold;
 }
 
 header {
   background-color: #fff;
-  padding: 2rem;
+  padding: 1rem;
   border-bottom: 1px solid #333;
+}
+
+nav {
+  font-size: 120%;
+  text-align: center;
 }
 
 nav ul {
@@ -148,12 +154,12 @@ nav a {
 }
 
 nav a:hover {
-  color: #505050;
+  color: #b9b9b9;
 }
 
 .title {
   font-weight: bold;
-  font-size: 140%;
+  font-size: 180%;
   line-height: 1em;
   text-decoration: none;
   color: inherit;
@@ -166,6 +172,13 @@ nav a:hover {
 
 .content p a {
   text-decoration: underline;
+}
+
+.post-data {
+  background-color: #f0f0f0;
+  padding: 10px;
+  font-size: 80%;
+  margin-top: -10px;
 }
 
 .tags {
@@ -190,4 +203,16 @@ nav a:hover {
   color: #666;
   font-size: 0.9em;
   margin-right: 5px;
+}
+
+#h-card {
+  overflow: auto;
+  padding: 0px 10px 15px;
+}
+
+#h-card img {
+  float: left;
+  max-height: 150px;
+  margin-top: -10px;
+  padding-right: 10px;
 }
