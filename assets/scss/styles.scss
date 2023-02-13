@@ -129,7 +129,7 @@ header {
 }
 
 nav {
-  font-size: 120%;
+  font-size: 110%;
   text-align: center;
 }
 
@@ -175,7 +175,7 @@ nav a:hover {
 }
 
 .post-data {
-  background-color: #f0f0f0;
+  background-color: #f7f7f7;
   padding: 10px;
   font-size: 80%;
   margin-top: -10px;
@@ -207,7 +207,15 @@ nav a:hover {
 
 #h-card {
   overflow: auto;
-  padding: 0px 10px 15px;
+  padding: 0px 20px 15px;
+  margin-top: 5px;
+  background-color: #f7f7f7;
+  border-radius: 4%;
+  text-align: justify;
+}
+
+#h-card h3 {
+  margin-top: 10px;
 }
 
 #h-card img {
