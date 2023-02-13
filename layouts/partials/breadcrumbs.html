@@ -5,8 +5,8 @@
         {{- if (gt (len .) 0) -}}    
             {{- $.Scratch.Set "isPage" "false" -}}
             {{- $.Scratch.Add "url" (print "/" . ) -}}
-            {{- if $.Site.GetPage (print . ".md") -}}
-                {{- with $.Site.GetPage (print . ".md") -}}
+            {{- if $.Site.GetPage -}}
+                {{- with $.Site.GetPage -}}
                     {{- if .IsPage -}}
                         {{- $.Scratch.Set "isPage" "true" -}}
                     {{- end -}}

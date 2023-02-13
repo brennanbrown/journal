@@ -9,7 +9,6 @@
         {{ range .Params.tags }}
           <a href="/tags/{{ . | urlize }}">{{ . }}</a> •
         {{ end }}
-        <br/>
       {{ end }}
     
       {{ if .Params.categories }}
@@ -18,7 +17,7 @@
           <a href="/categories/{{ . | urlize }}">{{ . }}</a>
         {{ end }}
       {{ end }}
-
+      <br/>
       ⌛ Reading time: {{ .ReadingTime }} minute{{ if (ne .ReadingTime 1) }}s{{ end }}
     </div>
     {{ end }}

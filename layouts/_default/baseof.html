@@ -86,7 +86,6 @@
 <body>
 	<main>
 		<header>
-            <img style="width:5%"src="https://i.ibb.co/jrvKBC0/logo.png" alt="Logo"/>
 			<a class="title" href="/">{{ .Site.Title }}</a>
 			<nav>
 				{{- if .Site.Menus.main }}				
@@ -99,7 +98,9 @@
 			</nav>
 		</header>
 		<div class="content">
-            {{ partial "breadcrumbs.html" . }}
+            {{ if not .IsHome }}
+                {{ partial "breadcrumbs.html" . }}
+            {{ end }}
 			{{- block "main" . }}{{ end }}
 		</div>
 	</main>

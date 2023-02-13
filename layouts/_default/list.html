@@ -1,7 +1,7 @@
 {{ define "main" }}
 
   {{ .Content }}
-  <h1>{{ .Title }}</h1>
+  <h1 style="text-align: center">{{ .Title }}</h1>
   {{ if gt ( len ( where .Pages "Section" "writing" )) 0 }}
     {{- $cs := .CurrentSection }}
     {{- with $cs }}
